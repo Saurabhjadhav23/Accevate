@@ -29,7 +29,6 @@ const LoginScreen: React.FC<Props> = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      {/* Force light appearance */}
       <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
 
       <Image
