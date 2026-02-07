@@ -4,11 +4,6 @@ import AppNavigator from './src/navigation/AppNavigator';
 import axios from 'axios';
 
 const App = () => {
-  useEffect(() => {
-    axios.get('https://your-api-base-url/login')
-      .then(res => console.log(res.data))
-      .catch(err => console.error(err));
-  }, []);
   return (
     <NavigationContainer>
       <AppNavigator />

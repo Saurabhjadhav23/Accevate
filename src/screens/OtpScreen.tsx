@@ -15,15 +15,12 @@ import { saveToken } from '../utils/storage';
 type Props = NativeStackScreenProps<RootStackParamList, 'OTP'>;
 
 const OtpScreen: React.FC<Props> = ({ route, navigation }) => {
-  const { userid } = route.params;
-  console.log(route.params,'userId from otp');
-  
+  const { userid } = route.params;  
   const [otp, setOtp] = useState('');
 
   const handleVerify = async () => {
     try {
       const res = await otpVerifyApi(userid, otp);
-      console.log(res,userid, otp,"res from otp")
       await saveToken(res.data.token);
       navigation.replace('Dashboard');
     } catch {

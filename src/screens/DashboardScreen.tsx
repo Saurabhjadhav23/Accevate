@@ -34,8 +34,6 @@ const DashboardScreen: React.FC<Props> = ({ navigation }) => {
       }
 
       const res = await dashboardApi(token);
-      console.log('DASHBOARD RESPONSE 👉', res);
-
       if (!res?.status) {
         await removeToken();
         navigation.replace('Login');
